@@ -5,7 +5,6 @@ import { Button } from '../ui/button';
 import { Card, CardHeader, CardContent} from '../ui/card';
 import { useDispatch, useSelector } from 'react-redux';
 import { addList, removeList, addDone, removeDone } from '@/redux/actions';
-import AppDispatch
 
 
 const TodoList: React.FC = () => {

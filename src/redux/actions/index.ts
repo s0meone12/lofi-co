@@ -8,7 +8,7 @@ import {
     LIST_REMOVE,
     LIST_ADD_DONE,
     LIST_REMOVE_DONE,
-  } from '@/redux/constantType/actionType';
+  } from '@/store/types/actionType';
 
   import { Dispatch } from '@reduxjs/toolkit';
 
