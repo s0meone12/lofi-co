@@ -4,6 +4,6 @@ export interface TodoItem {
   }
   
   export interface TodoState {
-    todoList: TodoItem[];
+    todoList: { name: string; complete: boolean }[];
     repeat: boolean;
   }

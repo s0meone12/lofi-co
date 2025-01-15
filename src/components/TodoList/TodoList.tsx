@@ -5,12 +5,12 @@ import { Button } from '../ui/button';
 import { Card, CardHeader, CardContent} from '../ui/card';
 import { useDispatch, useSelector } from 'react-redux';
 import { addList, removeList, addDone, removeDone } from '@/redux/actions';
-
+import { AppDispatch } from '@/store/store';
 
 const TodoList: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch: AppDispatch = useDispatch();
   const [list, setList] = useState<string>('');
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const data = useSelector((state: any) => state.todoItems);
   const { todoList, repeat } = data;
 
@@ -54,6 +54,8 @@ const TodoList: React.FC = () => {
             <div className="text-red-500 text-sm mb-2">This note is already added.</div>
           )}
           <div className="space-y-4 max-h-60 overflow-y-auto">
+            
+         {/*eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {todoList.map((list: any) => (
               <Card key={list.name} className={`border ${list.complete ? 'border-green-500' : 'border-blue-500'}`}>
                 <CardHeader className="flex justify-between items-center">

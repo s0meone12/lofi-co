@@ -1,8 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { rootReducer} from './reducers'; // Import your root reducer
+import { rootReducer, initialState} from './reducers'; // Import your root reducer
 
 const store = configureStore({
   reducer: rootReducer, // Add your root reducer
+  preloadedState: initialState,
   devTools: process.env.NODE_ENV !== 'production', // Enable Redux DevTools in development
 });
 
