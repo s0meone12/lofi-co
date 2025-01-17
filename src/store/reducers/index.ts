@@ -1,9 +1,17 @@
 import { combineReducers } from "@reduxjs/toolkit";
 import { listReducer } from "./listReducer";
-import { TodoState } from "../types/todoTypes";
+import modeReducer from "./modeReducer";
+import rainReducer from "./rainReducer";
+import moodReducer from "./moodReducer";
+import volumeReducer from "./volumeReducer";
+
 
 // Root reducer with proper typing
 export const rootReducer = combineReducers({
+  modeState: modeReducer,
+  rainState:rainReducer,
+  moodState:moodReducer,
+  volumeState: volumeReducer,
   todoItems: listReducer,
 });
 
@@ -23,5 +31,5 @@ const todoItemsFromStorage = (): any[] => {
 
 // Initial state with localStorage fallback
 export const initialState = {
-  todoItems: { todoList: todoItemsFromStorage() } as TodoState,
+  todoItems: { todoList: todoItemsFromStorage()},
 };
