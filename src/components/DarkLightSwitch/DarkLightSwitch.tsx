@@ -7,7 +7,7 @@ interface DarkLightSwitchProps {
   theme: 'day' | 'night';
 }
 
-const MaterialUISwitch = styled(Switch)(({ theme }: { theme: 'day' | 'night' }) => ({
+const MaterialUISwitch = styled(Switch)(({ mode }: { mode: 'day' | 'night' }) => ({
   width: 62,
   height: 34,
   padding: 7,
@@ -25,12 +25,12 @@ const MaterialUISwitch = styled(Switch)(({ theme }: { theme: 'day' | 'night' }) 
       },
       '& + .MuiSwitch-track': {
         opacity: 1,
-        backgroundColor: theme === 'day' ? '#8796A5' : '#aab4be',
+        backgroundColor: mode === 'day' ? '#8796A5' : '#aab4be',
       },
     },
   },
   '& .MuiSwitch-thumb': {
-    backgroundColor: theme === 'day' ? '#f3a952' : '#001e3c',
+    backgroundColor: mode === 'day' ? '#f3a952' : '#001e3c',
     width: 32,
     height: 32,
     '&:before': {
@@ -49,7 +49,7 @@ const MaterialUISwitch = styled(Switch)(({ theme }: { theme: 'day' | 'night' }) 
   },
   '& .MuiSwitch-track': {
     opacity: 1,
-    backgroundColor: theme === 'day' ? '#8796A5' : '#aab4be',
+    backgroundColor: mode === 'day' ? '#8796A5' : '#aab4be',
     borderRadius: 20 / 2,
   },
 }));
@@ -57,10 +57,11 @@ const MaterialUISwitch = styled(Switch)(({ theme }: { theme: 'day' | 'night' }) 
 const DarkLightSwitch: React.FC<DarkLightSwitchProps> = ({ theme }) => {
   return (
     <FormControlLabel
-      control={<MaterialUISwitch sx={{ m: 1 }} theme={theme} />}
+      control={<MaterialUISwitch sx={{ m: 1 }} mode={theme} />}
       label=""
     />
   );
 };
 
 export default DarkLightSwitch;
+
