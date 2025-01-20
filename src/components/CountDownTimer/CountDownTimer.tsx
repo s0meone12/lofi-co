@@ -9,6 +9,7 @@ interface CountDownTimerProps {
   isRunning: boolean;
   pause: () => void;
   resume: () => void;
+  restart:()=> void;
   setTimerHandler: (hours: number, minutes: number, seconds: number) => void;
   setTimerStart: (start: boolean) => void;
   timerStart: boolean;

@@ -1,4 +1,5 @@
 'use client'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from '@/redux/hooks';
 import { changeRainStatus } from '../../redux/actions';
@@ -25,7 +26,7 @@ const RainToggleButton: React.FC = () => {
   };
 
   return (
-    <div className="absolute z-10 right-3 top-[-200px] w-[250px] h-[100px] text-white text-sm font-sans cursor-pointer flex flex-col items-center justify-center">
+    <div className=" z-10 right-3 top-[-200px] w-[250px] h-[100px] text-white text-sm font-sans cursor-pointer flex flex-col items-center justify-center">
       {buttonClick && (
         <ReactAudioPlayer
           preload="auto"
@@ -41,7 +42,6 @@ const RainToggleButton: React.FC = () => {
       >
         <div className="relative top-1/2 transform -translate-y-1/2 text-center">
           <i className="fas fa-cloud-rain"></i>
-          <button>hello i am here</button>
         </div>
       </div>
     </div>

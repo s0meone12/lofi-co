@@ -5,9 +5,11 @@ import { changeDayNight } from '@/redux/actions';
 import DarkLightSwitch from '@/components/DarkLightSwitch/DarkLightSwitch';
 import Link from 'next/link';
 
+
 const Header: React.FC = () => {
   const [fullscreen, setFullscreen] = useState(false);
 //   const data = useSelector((state: any) => state.userState);
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
   const daynight = useSelector((state: any) => state.modeState);
   const dispatch = useDispatch();
 
@@ -88,9 +90,9 @@ useEffect(() => {
         <button onClick={toggleFullscreen} className="fullscreen-btn">
       {fullscreen ? (
 
-        <p>exit</p> // Icon for exiting fullscreen
+      <i className="fa-solid fa-compress fa-lg"></i> // Icon for exiting fullscreen
       ) : (
-        <p>enter full screen</p> // Icon for entering fullscreen
+        <i className="fa-solid fa-expand fa-lg"></i> // Icon for entering fullscreen
       )}
     </button>
       </div>

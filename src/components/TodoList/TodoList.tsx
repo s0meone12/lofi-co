@@ -1,4 +1,5 @@
 'use client';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import React, { useState, ChangeEvent, FormEvent } from 'react';
 import { Input } from '../ui/input';
 import { Button } from '../ui/button';
