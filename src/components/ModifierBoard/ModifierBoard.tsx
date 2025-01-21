@@ -34,11 +34,8 @@ const ModifierBoard: React.FC<ModifierBoardProps> = ({
   timerStart,
 }) => {
   const dispatch = useDispatch();
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const moodState = useSelector((state: any) => state.moodState);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rainState = useSelector((state: any) => state.rainState);
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const volumeState = useSelector((state: any) => state.volumeState);
 
   const { rainValue } = rainState;
@@ -70,7 +67,7 @@ const ModifierBoard: React.FC<ModifierBoardProps> = ({
     setOpenFocus(!openFocus);
     setOpenMood(false);
   };
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+
   const handleRainSliderChange = (e: any) => {
     const value = e.target.value;
     if (value > 0) {
@@ -120,7 +117,7 @@ const ModifierBoard: React.FC<ModifierBoardProps> = ({
       )}
 
       <div
-        className={`fixed top-1/2 transform -translate-y-1/2 bg-black bg-opacity-80 text-gray-300 rounded-full flex flex-col items-center justify-around py-4 px-2 ${openMood ? 'rounded-r-full' : 'rounded-full'}`}
+        className={`fixed top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-80 text-gray-300 rounded-full flex flex-col items-center justify-around py-4 px-2 ${openMood ? 'rounded-r-full' : 'rounded-full'}`}
       >
         <div
           className={`p-4 cursor-pointer ${openMood ? 'text-yellow-500' : ''}`}
@@ -167,7 +164,7 @@ const ModifierBoard: React.FC<ModifierBoardProps> = ({
 
             <h5 className="font-semibold mb-2">Background Noise</h5>
             <div className="overflow-y-scroll h-60">
-              {[
+              {[ 
                 { label: 'City traffic', value: cityTraffic, setValue: setCityTraffic },
                 { label: 'City rain', value: rainValue, setValue: setCityRain },
                 { label: 'Fireplace', value: fireplace, setValue: setFireplace },
@@ -185,7 +182,6 @@ const ModifierBoard: React.FC<ModifierBoardProps> = ({
                   <span>{label}</span>
                   <Slider
                     value={value}
-                      // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     onChange={(e: any) => setValue(e.target.value)}
                     className="w-2/3"
                   />

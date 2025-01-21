@@ -56,7 +56,7 @@ const Home: React.FC = () => {
       <video
         className={`${
           combineMode === 'night-clear' ? 'opacity-100' : 'opacity-0'
-        } z-10 object-cover absolute top-0 left-0 w-full h-full transition-opacity duration-1000`}
+        } object-cover absolute top-0 left-0 w-full h-full transition-opacity duration-1000`}
         autoPlay
         loop
         muted
@@ -66,7 +66,7 @@ const Home: React.FC = () => {
       <video
         className={`${
           combineMode === 'night-rain' ? 'opacity-100' : 'opacity-0'
-        } z-10 object-cover absolute top-0 left-0 w-full h-full transition-opacity duration-1000`}
+        }  object-cover absolute top-0 left-0 w-full h-full transition-opacity duration-1000`}
         autoPlay
         loop
         muted
@@ -77,7 +77,7 @@ const Home: React.FC = () => {
       <video
         className={`${
           combineMode === 'day-clear' ? 'opacity-100' : 'opacity-0'
-        } z-10 object-cover absolute top-0 left-0 w-full h-full transition-opacity duration-1000`}
+        } object-cover absolute top-0 left-0 w-full h-full transition-opacity duration-1000`}
         autoPlay
         loop
         muted
@@ -87,7 +87,7 @@ const Home: React.FC = () => {
       <video
         className={`${
           combineMode === 'day-rain' ? 'opacity-100' : 'opacity-0'
-        } z-10 object-cover absolute top-0 left-0 w-full h-full transition-opacity duration-1000`}
+        } object-cover absolute top-0 left-0 w-full h-full transition-opacity duration-1000`}
         autoPlay
         loop
         muted
@@ -110,6 +110,7 @@ const Home: React.FC = () => {
       />
       <YoutubeVideo />
       <Footer />
+
     </>
   );
 };

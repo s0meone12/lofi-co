@@ -1,6 +1,8 @@
+'use client'
 import React, { useState, useRef, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { RootState } from '@/store/reducers'; // Adjust the path as per your project structure
+import Image from 'next/image'; // Import Next.js Image component
 
 interface Song {
   src: string;
@@ -48,30 +50,30 @@ const Player: React.FC<PlayerProps> = ({ currentSongIndex, setCurrentSongIndex, 
   };
 
   return (
-    <div className="flex flex-col items-center text-white rounded-lg shadow-md">
+    <div className="flex flex-col items-center text-white rounded-lg shadow-lg p-8 mb-12 relative z-50">
       <audio loop src={songs[currentSongIndex]?.src} ref={audioElement}></audio>
-      <div className="flex items-center space-x-4">
+      <div className="flex items-center space-x-10">
         <button
-          className="skip-btn w-10 h-10 flex justify-center items-center bg-gray-700 rounded-full hover:bg-gray-600"
+          className="skip-btn w-16 h-16 flex justify-center items-center bg-transparent rounded-full transition duration-200"
           onClick={() => SkipSong(false)}
         >
-          <img src="/assets/icons/prev.svg" alt="Previous" className="w-6 h-6" />
+          <Image src="/assets/icons/prev.svg" alt="Previous" width={60} height={60} />
         </button>
         <button
-          className="play-btn w-12 h-12 flex justify-center items-center bg-gray-700 rounded-full hover:bg-gray-600"
+          className="play-btn w-20 h-20 flex justify-center items-center bg-transparent rounded-full transition duration-200"
           onClick={() => setIsPlaying(!isPlaying)}
         >
           {isPlaying ? (
-            <img src="/assets/icons/pause.svg" alt="Pause" className="w-6 h-6" />
+            <Image src="/assets/icons/pause.svg" alt="Pause" width={72} height={72} />
           ) : (
-            <img src="/assets/icons/play.svg" alt="Play" className="w-6 h-6" />
+            <Image src="/assets/icons/play.svg" alt="Play" width={72} height={72} />
           )}
         </button>
         <button
-          className="skip-btn w-10 h-10 flex justify-center items-center bg-gray-700 rounded-full hover:bg-gray-600"
+          className="skip-btn w-16 h-16 flex justify-center items-center bg-transparent rounded-full transition duration-200"
           onClick={() => SkipSong(true)}
         >
-          <img src="/assets/icons/next.svg" alt="Next" className="w-6 h-6" />
+          <Image src="/assets/icons/next.svg" alt="Next" width={60} height={60} />
         </button>
       </div>
     </div>
