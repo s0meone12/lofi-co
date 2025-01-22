@@ -42,7 +42,7 @@ const TodoList: React.FC = () => {
           onChange={(e: ChangeEvent<HTMLInputElement>) => setList(e.target.value)}
           placeholder="Enter task"
           required
-          className="flex-grow"
+          className="flex-grow text-gray-500"
         />
         <Button type="submit">
           Add
@@ -54,12 +54,13 @@ const TodoList: React.FC = () => {
           {repeat && (
             <div className="text-red-500 text-sm mb-2">This note is already added.</div>
           )}
-          <div className="space-y-4 max-h-60 overflow-y-auto">
+          <div className="space-y-4 h-60 w-full overflow-y-auto">
+            {/* overflow-y-auto h-60 w-full p-2 overflow-y-auto h-60 w-full p-2 no-scrollbar*/}
             
          {/*eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {todoList.map((list: any) => (
               <Card key={list.name} className={`border ${list.complete ? 'border-green-500' : 'border-blue-500'}`}>
-                <CardHeader className="flex justify-between items-center">
+                <CardHeader className="flex flex-row justify-between items-center">
                   <span className="font-medium">{list.name}</span>
                   <div className="flex space-x-2">
                     {list.complete ? (

@@ -109,8 +109,7 @@ const Home: React.FC = () => {
         timerStart={timerStart}
       />
       <YoutubeVideo />
-      <Footer />
-
+      <Footer/>
     </>
   );
 };

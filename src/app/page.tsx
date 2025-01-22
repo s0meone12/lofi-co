@@ -1,11 +1,9 @@
-import ModifierBoard from "@/components/ModifierBoard/ModifierBoard";
-import RainToggleButton from "@/components/RainToggleButton/RainToggleButton";
+import LandingPage from "@/components/LandingPage/LandingPage";
 
 export default function Home() {
   return (
     <div>
-      <h1>hello world</h1>
-      <RainToggleButton/>
+      <LandingPage/>
     </div>
   );
 }

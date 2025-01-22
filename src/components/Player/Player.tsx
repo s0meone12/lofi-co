@@ -50,7 +50,7 @@ const Player: React.FC<PlayerProps> = ({ currentSongIndex, setCurrentSongIndex, 
   };
 
   return (
-    <div className="flex flex-col items-center text-white rounded-lg shadow-lg p-8 mb-12 relative z-50">
+    <div className="z-50 flex flex-col items-center text-white p-8 mb-12 relative ">
       <audio loop src={songs[currentSongIndex]?.src} ref={audioElement}></audio>
       <div className="flex items-center space-x-10">
         <button

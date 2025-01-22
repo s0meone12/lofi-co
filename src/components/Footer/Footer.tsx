@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
   const [currentSongIndex, setCurrentSongIndex] = useState(0);
 
   return (
-    <div className="absolute bottom-0 w-full  flex pb-10 items-center px-6">
+    <div className="absolute bottom-0 w-full h-40 max-h-32 flex items-center px-6 overflow-hidden">
       <div className="author flex items-center">
         {moodMode === 'chill' ? (
           <span className="text-white">Song name: {chill[currentSongIndex].name}</span>
