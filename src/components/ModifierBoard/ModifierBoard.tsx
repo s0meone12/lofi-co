@@ -121,7 +121,7 @@ const ModifierBoard: React.FC<ModifierBoardProps> = ({
       )}
 
       <div
-        className={`fixed top-1/2 right-0 transform -translate-y-1/2 bg-black bg-opacity-80 text-gray-300 rounded-full flex flex-col items-center justify-around py-4 px-2 ${openMood ? 'rounded-r-full' : 'rounded-full'}`}
+        className={`fixed z-50 top-[45%] right-0 transform -translate-y-1/2 bg-black bg-opacity-80 text-gray-300 rounded-full flex flex-col items-center justify-around w-[60px] mr-[20px] ${openMood ? 'rounded-r-full' : 'rounded-full'}`}
       >
         <div
           className={`p-4 cursor-pointer ${openMood ? 'text-yellow-500' : ''}`}
@@ -139,7 +139,7 @@ const ModifierBoard: React.FC<ModifierBoardProps> = ({
                   key={mood}
                   id={mood}
                   onClick={handleMoodChange}
-                  className={`flex flex-col items-center justify-center w-1/3 mx-1 p-3 rounded-lg cursor-pointer ${moodMode === mood ? 'bg-yellow-500 text-white' : 'bg-gray-800'}`}
+                  className={`flex flex-col items-center justify-center w-full h-[85px] mx-3 p-3 rounded-lg cursor-pointer bg-[#14141d] text-[#4e5054]`}
                 >
                   <i className={`fas ${
                     mood === 'sleep'
@@ -147,8 +147,10 @@ const ModifierBoard: React.FC<ModifierBoardProps> = ({
                       : mood === 'jazzy'
                       ? 'fa-guitar'
                       : 'fa-coffee'
-                  } fa-2x text-[#4e5054]`}></i>
-                  <span>{mood.charAt(0).toUpperCase() + mood.slice(1)}</span>
+                  } fa-2x ${
+                    moodMode === mood ? 'text-[#f3a952]' : 'text-[#4e5054]'
+                  }`}></i>
+                  <span className={`${moodMode === mood ? 'text-[#ffff]' : 'text-[#4e5054]'}`}>{mood.charAt(0).toUpperCase() + mood.slice(1)}</span>
                 </div>
               ))}
             </div>

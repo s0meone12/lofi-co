@@ -36,7 +36,7 @@ const CountDownTimer: React.FC<CountDownTimerProps> = ({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-[150px]">
+    <div className="flex flex-col items-center h-[150px]">
       {timerStart ? (
         <div className="flex flex-col items-center space-y-4">
           <div className="flex justify-center items-center h-[80px]">

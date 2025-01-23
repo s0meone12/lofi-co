@@ -42,7 +42,7 @@ const Header: React.FC = () => {
   };
 
   return (
-    <nav className="absolute left-0 w-full z-10 flex items-center p-2.5">
+    <nav className="absolute left-0 w-full z-10 flex items-center">
       <Link href="/">
         <Image
           src="/assets/icons/lofi-logo.gif"
@@ -54,7 +54,7 @@ const Header: React.FC = () => {
       </Link> 
       <div className="flex justify-center w-full relative">
         {/* Middle-left section */}
-        <div className="absolute left-[22%] transform -translate-x-1/4 flex space-x-10">
+        <div className="absolute left-[22%] transform-translate-x-1/4 flex space-x-10">
           <Link href="/about" className="flex items-center text-white">
             <i className="fas fa-info"></i>
             <span className="ml-2 text-sm tracking-wide relative after:content-[''] after:block after:h-[2px] after:bg-white after:absolute after:bottom-[-6px] after:left-0 after:right-0 after:opacity-0 after:scale-x-0 after:origin-left after:transition-transform after:duration-250 after:ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:after:opacity-100 hover:after:scale-x-100">
@@ -75,7 +75,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Middle-right section */}
-        <div className="absolute right-[22%] transform translate-x-1/4 flex space-x-5">
+        <div className="absolute right-[35%] transform translate-x-1/4 flex space-x-5">
           <div onClick={daynightHandler} className="cursor-pointer">
             <DarkLightSwitch theme={mode} />
           </div>

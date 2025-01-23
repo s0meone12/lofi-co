@@ -1,5 +1,4 @@
 "use client";
-
 import { Button } from "@/components/ui/button";
 import { Music, BookOpen, Brain, Moon } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -8,7 +7,7 @@ export default function LandingPage() {
   const router = useRouter();
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-background to-accent">
+    <main className="overflow-y-scroll min-h-screen bg-gradient-to-b from-background to-accent no-scrollbar">
       {/* Hero Section */}
       <div className="relative">
         <div className="absolute inset-0 bg-black/40 z-10 animate-fade-in" />
@@ -16,9 +15,9 @@ export default function LandingPage() {
           className="h-screen relative bg-cover bg-center animate-scale-up"
           style={{
             backgroundImage:
-              "url('/assets/video/landingPage.png')",
+            "url('/assets/video/landingPage.png')",
           }}
-        >
+          >
           <div className="container mx-auto px-4 h-full flex items-center relative z-20">
             <div className="max-w-2xl">
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 animate-slide-down">
@@ -32,7 +31,7 @@ export default function LandingPage() {
                 size="lg"
                 onClick={() => router.push("/home")}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground animate-slide-down animate-delay-400"
-              >
+                >
                 Start Listening
               </Button>
             </div>
@@ -52,28 +51,28 @@ export default function LandingPage() {
                 icon={<Music className="w-8 h-8" />}
                 title="Curated Playlists"
                 description="Hand-picked lofi beats perfect for any mood or study session"
-              />
+                />
             </div>
             <div className="animate-scale-up animate-delay-200">
               <FeatureCard
                 icon={<BookOpen className="w-8 h-8" />}
                 title="Study Timer"
                 description="Built-in pomodoro timer to optimize your study sessions"
-              />
+                />
             </div>
             <div className="animate-scale-up animate-delay-400">
               <FeatureCard
                 icon={<Brain className="w-8 h-8" />}
                 title="Focus Enhancement"
                 description="Music scientifically proven to improve concentration"
-              />
+                />
             </div>
             <div className="animate-scale-up animate-delay-600">
               <FeatureCard
                 icon={<Moon className="w-8 h-8" />}
                 title="Ambient Sounds"
-                description="Mix in rain, coffee shop, or nature sounds"
-              />
+                description="Mix in rain, peoples, coffee shop, or nature sounds"
+                />
             </div>
           </div>
         </div>
@@ -93,12 +92,13 @@ export default function LandingPage() {
             size="lg"
             onClick={() => router.push("/home")}
             className="bg-primary hover:bg-primary/90 text-primary-foreground animate-slide-down animate-delay-400"
-          >
+            >
             Start Listening Now
           </Button>
         </div>
       </section>
     </main>
+
   );
 }
 

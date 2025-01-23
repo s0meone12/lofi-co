@@ -34,7 +34,7 @@ const TodoList: React.FC = () => {
   };
 
   return (
-    <div className="p-4 bg-gray-100">
+    <div className="overflow-hidden p-4 bg-gray-100 rounded-lg max-h-[80vh]">
       <form onSubmit={handleSubmit} className="flex items-center space-x-4 mb-4">
         <Input
           type="text"
@@ -54,9 +54,7 @@ const TodoList: React.FC = () => {
           {repeat && (
             <div className="text-red-500 text-sm mb-2">This note is already added.</div>
           )}
-          <div className="space-y-4 h-60 w-full overflow-y-auto">
-            {/* overflow-y-auto h-60 w-full p-2 overflow-y-auto h-60 w-full p-2 no-scrollbar*/}
-            
+          <div className="overflow-y-auto space-y-4 max-h-[50vh] w-full scrollbar-hide">  
          {/*eslint-disable-next-line @typescript-eslint/no-explicit-any */}
             {todoList.map((list: any) => (
               <Card key={list.name} className={`border ${list.complete ? 'border-green-500' : 'border-blue-500'}`}>
