@@ -46,6 +46,7 @@ const Header: React.FC = () => {
       <Link href="/">
         <Image
           src="/assets/icons/lofi-logo.gif"
+          unoptimized
           alt="Lofi Logo"
           width={150}
           height={150}
