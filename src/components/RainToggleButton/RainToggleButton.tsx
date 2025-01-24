@@ -37,7 +37,7 @@ const RainToggleButton: React.FC = () => {
         />
       )}
       <div
-        className="text-lg border-2 border-white rounded-full w-10 h-10 m-1 transition-[width,background-color,box-shadow] duration-[0.5s] ease-[cubic-bezier(0.68,-0.55,0.265,1.55)] hover:w-[125px] hover:bg-black/80 hover:shadow-md hover:text-[#91ccc2] hover:border-none active:shadow-sm active:duration-75"
+        className="text-lg border-2 border-white rounded-full w-10 h-10 m-1 transition-[width,background-color,box-shadow] duration-&lsqb;0.5s&rsqb; ease-&lsqb;cubic-bezier(0.68,-0.55,0.265,1.55)&rsqb; hover:w-[125px] hover:bg-black/80 hover:shadow-md hover:text-[#91ccc2] hover:border-none active:shadow-sm active:duration-75"
         onClick={rainButtonHandler}
       >
         <div className="relative top-1/2 transform -translate-y-1/2 text-center">

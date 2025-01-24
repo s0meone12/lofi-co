@@ -49,6 +49,12 @@ const Home: React.FC = () => {
     restart(time);
   };
 
+  const handleRestart = () => {
+    const newExpiryTimestamp = new Date();
+    newExpiryTimestamp.setSeconds(newExpiryTimestamp.getSeconds() + 600); // Example: Add 10 minutes
+    restart(newExpiryTimestamp, true); // Restart the timer and auto-start it
+  };
+
   return (
     <>
       {/* Embedded the background video based on each state */}
@@ -103,7 +109,7 @@ const Home: React.FC = () => {
         isRunning={isRunning}
         pause={pause}
         resume={resume}
-        restart={restart}
+        restart={handleRestart}
         setTimerHandler={setTimerHandler}
         setTimerStart={setTimerStart}
         timerStart={timerStart}

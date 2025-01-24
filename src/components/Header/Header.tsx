@@ -58,7 +58,7 @@ const Header: React.FC = () => {
         <div className="absolute left-[22%] transform-translate-x-1/4 flex space-x-10">
           <Link href="/about" className="flex items-center text-white">
             <i className="fas fa-info"></i>
-            <span className="ml-2 text-sm tracking-wide relative after:content-[''] after:block after:h-[2px] after:bg-white after:absolute after:bottom-[-6px] after:left-0 after:right-0 after:opacity-0 after:scale-x-0 after:origin-left after:transition-transform after:duration-250 after:ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:after:opacity-100 hover:after:scale-x-100">
+            <span className="ml-2 text-sm tracking-wide relative after:content-[''] after:block after:h-[2px] after:bg-white after:absolute after:bottom-[-6px] after:left-0 after:right-0 after:opacity-0 after:scale-x-0 after:origin-left after:transition-transform after:duration-250 after:ease-&lsqb;cubic-bezier(0.25,0.46,0.45,0.94)&rsqb; hover:after:opacity-100 hover:after:scale-x-100">
               How it works
             </span>
           </Link>
@@ -69,7 +69,7 @@ const Header: React.FC = () => {
             className="flex items-center text-white"
           >
             <i className="fab fa-github"></i>
-            <span className="ml-2 text-sm tracking-wide relative after:content-[''] after:block after:h-[2px] after:bg-white after:absolute after:bottom-[-6px] after:left-0 after:right-0 after:opacity-0 after:scale-x-0 after:origin-left after:transition-transform after:duration-250 after:ease-[cubic-bezier(0.25,0.46,0.45,0.94)] hover:after:opacity-100 hover:after:scale-x-100">
+            <span className="ml-2 text-sm tracking-wide relative after:content-[''] after:block after:h-[2px] after:bg-white after:absolute after:bottom-[-6px] after:left-0 after:right-0 after:opacity-0 after:scale-x-0 after:origin-left after:transition-transform after:duration-250 after:ease-&lsqb;cubic-bezier(0.25,0.46,0.45,0.94)&rsqb; hover:after:opacity-100 hover:after:scale-x-100">
               GitHub
             </span>
           </a>
