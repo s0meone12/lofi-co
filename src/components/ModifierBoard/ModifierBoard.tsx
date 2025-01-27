@@ -121,7 +121,7 @@ const ModifierBoard: React.FC<ModifierBoardProps> = ({
       )}
 
       <div
-        className={`fixed z-50 top-[40%] right-0 transform -translate-y-1/2 bg-black bg-opacity-80 text-gray-300 rounded-full flex flex-col items-center justify-around w-[60px] mr-[20px] ${openMood ? 'rounded-r-full' : 'rounded-full'}`}
+        className={`fixed z-50 top-[45%] right-0 transform -translate-y-1/2 bg-black bg-opacity-80 text-gray-300 rounded-full flex flex-col items-center justify-around w-[60px] mr-[20px] ${openMood ? 'rounded-r-full' : 'rounded-full'}`}
       >
         <div
           className={`p-4 cursor-pointer ${openMood ? 'text-yellow-500' : ''}`}
