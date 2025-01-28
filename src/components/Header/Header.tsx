@@ -89,6 +89,13 @@ const Header: React.FC = () => {
           </button>
         </div>
       </div>
+
+      <Link href="/login" className="flex items-center text-white pr-20">
+        <i className="fas fa-sign-in-alt"></i>
+        <span className="ml-2 text-sm tracking-wide relative after:content-[''] after:block after:h-[2px] after:bg-white after:absolute after:bottom-[-6px] after:left-0 after:right-0 after:opacity-0 after:scale-x-0 after:origin-left after:transition-transform after:duration-250 after:ease-&lsqb;cubic-bezier(0.25,0.46,0.45,0.94)&rsqb; hover:after:opacity-100 hover:after:scale-x-100">
+             Login
+            </span>
+      </Link>
     </nav>
   );
 };

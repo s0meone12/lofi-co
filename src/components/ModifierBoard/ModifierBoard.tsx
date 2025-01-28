@@ -273,7 +273,7 @@ const ModifierBoard: React.FC<ModifierBoardProps> = ({
               setTimerStart={setTimerStart}
               timerStart={timerStart}
             />
-            <h4 className="text-lg font-semibold ">To-do List</h4>
+            <h4 className="pt-2 text-lg font-semibold ">To-do List</h4>
             <TodoList />
           </div>
         )}

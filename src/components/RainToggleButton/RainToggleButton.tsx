@@ -26,7 +26,7 @@ const RainToggleButton: React.FC = () => {
   };
 
   return (
-    <div className="z-10 absolute right-3 top-[12%] w-[250px] h-[100px] text-white text-sm font-sans cursor-pointer flex flex-col items-center justify-center">
+    <div className="z-10 absolute right-3 top-[20%] w-[250px] h-[100px] text-white text-sm font-sans cursor-pointer flex flex-col items-center justify-center">
       {buttonClick && (
         <ReactAudioPlayer
           preload="auto"

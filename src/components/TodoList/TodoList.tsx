@@ -1,107 +1,3 @@
-// 'use client';
-// import '@fortawesome/fontawesome-free/css/all.min.css';
-// import React, { useState, ChangeEvent, FormEvent } from 'react';
-// import { Input } from '../ui/input';
-// import { Button } from '../ui/button';
-// import { Card, CardHeader, CardContent} from '../ui/card';
-// import { useDispatch, useSelector } from 'react-redux';
-// import { addList, removeList, addDone, removeDone } from '@/redux/actions';
-// import { AppDispatch } from '@/store/store';
-
-// const TodoList: React.FC = () => {
-//   const dispatch: AppDispatch = useDispatch();
-//   const [list, setList] = useState<string>('');
-// // eslint-disable-next-line @typescript-eslint/no-explicit-any
-//   const data = useSelector((state: any) => state.todoItems);
-//   const { todoList, repeat } = data;
-
-//   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-//     e.preventDefault();
-//     dispatch(addList(list));
-//     setList('');
-//   };
-
-//   const handleDelete = (item: string) => {
-//     dispatch(removeList(item));
-//   };
-
-//   const handleComplete = (item: string) => {
-//     dispatch(addDone(item));
-//   };
-
-//   const handleNotComplete = (item: string) => {
-//     dispatch(removeDone(item));
-//   };
-
-//   return (
-//     <div className="overflow-hidden p-4 bg-gray-100 rounded-lg min-h-[80vh]">
-//       <form onSubmit={handleSubmit} className="flex items-center space-x-4 mb-4">
-//         <Input
-//           type="text"
-//           value={list}
-//           onChange={(e: ChangeEvent<HTMLInputElement>) => setList(e.target.value)}
-//           placeholder="Enter task"
-//           required
-//           className="flex-grow text-gray-500"
-//         />
-//         <Button type="submit">
-//           Add
-//         </Button>
-//       </form>
-    
-//       {todoList.length > 0 ? (
-//         <>
-//           {repeat && (
-//             <div className="text-red-500 text-sm mb-2">This note is already added.</div>
-//           )}
-//           <div className="overflow-y-auto space-y-4 max-h-[50vh] w-full scrollbar-hide">  
-//          {/*eslint-disable-next-line @typescript-eslint/no-explicit-any */}
-//             {todoList.map((list: any) => (
-//               <Card key={list.name} className={`border ${list.complete ? 'border-green-500' : 'border-blue-500'}`}>
-//                 <CardHeader className="flex flex-row justify-between items-center">
-//                   <span className="font-medium">{list.name}</span>
-//                   <div className="flex space-x-2">
-//                     {list.complete ? (
-//                       <Button
-//                         onClick={() => handleNotComplete(list.name)}
-//                         size="sm"
-//                       >
-//                         <i className="fas fa-check"></i>
-//                       </Button>
-//                     ) : (
-//                       <Button
-//                         onClick={() => handleComplete(list.name)}
-//                         size="sm"
-//                       >
-//                         <i className="fas fa-eraser"></i>
-//                       </Button>
-//                     )}
-//                     <Button
-//                       variant="outline"
-//                       onClick={() => handleDelete(list.name)}
-//                       size="sm"
-//                     >
-//                       <i className="fas fa-trash"></i>
-//                     </Button>
-//                   </div>
-//                 </CardHeader>
-//               </Card>
-//             ))}
-//           </div>
-//         </>
-//       ) : (
-//         <Card>
-//           <CardContent className="text-center text-gray-500">Nothing to do yet.</CardContent>
-//         </Card>
-//       )}
-//     </div>
-//   );
-// };
-
-// export default TodoList;
-
-
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -208,7 +104,7 @@ export default function Home() {
 
   if (!isClient) {
     return (
-      <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="min-h-screen flex items-center justify-center pt-4">
         <Card className="w-96 rounded-2xl shadow-lg">
           <CardContent>
             <div className="animate-pulse">
@@ -224,7 +120,7 @@ export default function Home() {
   }
 
   return (
-    <div className="flex items-center justify-center p-4">
+    <div className="flex items-center justify-center pt-2">
       <Card className="w-80 rounded-2xl shadow-lg">
         <CardContent className="pt-6">
           <form onSubmit={addTodo} className="flex gap-2 mb-3">
