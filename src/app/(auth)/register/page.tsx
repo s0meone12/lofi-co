@@ -1,7 +1,11 @@
 import React from 'react'
-
-export default function page() {
-  return (
-    <div>register page is here</div>
-  )
+import { RegisterForm } from '@/components/Auth/register-form';
+const register = () => {
+  return ( 
+    <div>
+      <RegisterForm/>
+    </div>
+   );
 }
+ 
+export default register;

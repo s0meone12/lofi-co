@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-import { chill, jazzy, sleep } from '../../data/songData';
+import { chill, jazzy, sleep } from '../../songdata/songData';
 import { useSelector } from 'react-redux';
 import Player from '../Player/Player';
 
