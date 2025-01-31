@@ -33,8 +33,10 @@ On your terminal or cmd, type: `git clone git@github.com:s0meone12/lofi-co.git`
 . React
 . Next.js
 . Typescript
-. Redux
+. Redux & Redux toolkit
 . ReactPlayer
 . Tailwind Css
 . Next Auth
+. Prisma ORM
+. Neondb (serverless postgress)
 

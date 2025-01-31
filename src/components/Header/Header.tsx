@@ -6,13 +6,30 @@ import DarkLightSwitch from '@/components/DarkLightSwitch/DarkLightSwitch';
 import Link from 'next/link';
 import Image from 'next/image';
 
+
 const Header: React.FC = () => {
   const [fullscreen, setFullscreen] = useState(false);
+  const [session, setSession] = useState(null);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const daynight = useSelector((state: any) => state.modeState);
   const dispatch = useDispatch();
 
   const { mode } = daynight;
+
+
+  useEffect(() => {
+    const fetchSession = async () => {
+      const res = await fetch('/api/auth/session');
+      const data = await res.json();
+      setSession(data);
+    };
+    fetchSession();
+  }, []);
+
+  const handleLogout = async () => {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    window.location.reload(); // Refresh to reflect logout
+  };
 
   const daynightHandler = () => {
     dispatch(changeDayNight(mode));
@@ -40,6 +57,7 @@ const Header: React.FC = () => {
       });
     }
   };
+  
 
   return (
     <nav className="absolute left-0 w-full z-10 flex items-center">
@@ -90,12 +108,18 @@ const Header: React.FC = () => {
         </div>
       </div>
 
-      <Link href="/login" className="flex items-center text-white pr-20">
-        <i className="fas fa-sign-in-alt"></i>
-        <span className="ml-2 text-sm tracking-wide relative after:content-[''] after:block after:h-[2px] after:bg-white after:absolute after:bottom-[-6px] after:left-0 after:right-0 after:opacity-0 after:scale-x-0 after:origin-left after:transition-transform after:duration-250 after:ease-&lsqb;cubic-bezier(0.25,0.46,0.45,0.94)&rsqb; hover:after:opacity-100 hover:after:scale-x-100">
-             Login
-            </span>
-      </Link>
+      {session ? (
+        <button onClick={handleLogout} className="flex items-center text-white pr-20">
+          <i className="fas fa-sign-out-alt"></i>
+          <span className="ml-2 text-sm">Logout</span>
+        </button>
+      ) : (
+        <Link href="/login" className="flex items-center text-white pr-20">
+          <i className="fas fa-sign-in-alt"></i>
+          <span className="ml-2 text-sm">Login</span>
+        </Link>
+      )}
+
     </nav>
   );
 };

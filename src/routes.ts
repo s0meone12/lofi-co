@@ -1,6 +1,5 @@
 export const publicRoutes = [
     "/",
-    "/home"
 ]
 
 export const authRoutes = [
