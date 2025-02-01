@@ -1,6 +1,6 @@
 'use client'
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from '@/redux/hooks';
 import { changeRainStatus } from '../../redux/actions';
 import ReactAudioPlayer from 'react-audio-player';
@@ -19,10 +19,17 @@ const RainToggleButton: React.FC = () => {
 
   const [buttonClick, setButtonClick] = useState(false);
 
+
+  useEffect(() => {
+    setButtonClick(rainValue > 0);
+  }, [rainValue]);
+
   const rainButtonHandler = () => {
-    if (rainValue === 0) dispatch(changeRainStatus(rainMode, 30));
-    else dispatch(changeRainStatus(rainMode, 0));
-    setButtonClick(!buttonClick);
+    if (rainValue === 0) {
+      dispatch(changeRainStatus(rainMode, 30));
+    } else {
+      dispatch(changeRainStatus(rainMode, 0));
+    }
   };
 
   return (

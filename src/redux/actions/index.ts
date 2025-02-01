@@ -11,6 +11,9 @@ import {
   } from '@/store/types/actionType';
 import { Dispatch } from 'redux';
 
+type AppActions = SetModeAction | SetRainAction | SetMoodAction | SetVolumeAction;
+
+
   interface SetModeAction {
     type: typeof SET_MODE;
     mode: string;
@@ -103,7 +106,7 @@ import { Dispatch } from 'redux';
     if (currentStatus === 'day') status = 'night';
     else if (currentStatus === 'night') status = 'day';
   
-    return (dispatch: Dispatch) => {
+    return (dispatch: Dispatch<AppActions>) => {
       dispatch(setMode(status));
     };
   }
@@ -113,19 +116,19 @@ import { Dispatch } from 'redux';
     if (currentStatus === 'rain') rainStatus = 'clear';
     else if (currentStatus === 'clear') rainStatus = 'rain';
   
-    return (dispatch: Dispatch) => {
+    return (dispatch: Dispatch<AppActions>) => {
       dispatch(setRain(rainStatus, value));
     };
   }
   
   export function changeMoodStatus(currentStatus: string) {
-    return (dispatch: Dispatch) => {
+    return (dispatch: Dispatch<AppActions>) => {
       dispatch(setMood(currentStatus));
     };
   }
   
   export function changeVolume(currentStatus: number) {
-    return (dispatch: Dispatch) => {
+    return (dispatch: Dispatch<AppActions>) => {
       dispatch(setVolume(currentStatus));
     };
   }

@@ -28,6 +28,7 @@ const Header: React.FC = () => {
 
   const handleLogout = async () => {
     await fetch('/api/auth/logout', { method: 'POST' });
+    localStorage.removeItem("rainState");
     window.location.reload(); // Refresh to reflect logout
   };
 

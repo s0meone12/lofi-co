@@ -5,15 +5,28 @@ import {
   LIST_REMOVE_DONE,
   ActionType,
 } from "../types/actionType";
-import { TodoState, TodoItem } from "../types/todoTypes";
+// import { TodoState, TodoItem } from "../types/todoTypes";
 
-const initialState: TodoState = {
-  todoList: [],
+
+ interface TodoItem {
+  name: string;
+  complete: boolean;
+}
+
+interface TodoState {
+    todoList: TodoItem[];
+    repeat: boolean;
+}
+
+const INITIAL_STATE: TodoState = {
+  todoList: typeof window !== "undefined" && localStorage.getItem("listItems")
+    ? JSON.parse(localStorage.getItem("listItems")!)
+    : [],
   repeat: false,
 };
 
-export const listReducer = (
-  state: TodoState = initialState,
+const listReducer = (
+  state: TodoState = INITIAL_STATE,
   action: ActionType
 ): TodoState => {
   switch (action.type) {
@@ -76,3 +89,5 @@ export const listReducer = (
       return state;
   }
 };
+
+export default listReducer;
