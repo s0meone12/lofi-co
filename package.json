@@ -22,6 +22,7 @@
     "@radix-ui/react-scroll-area": "^1.2.2",
     "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-tabs": "^1.1.2",
+    "@redux-devtools/extension": "^3.3.0",
     "@reduxjs/toolkit": "^2.5.0",
     "@types/bcryptjs": "^2.4.6",
     "aws-sdk": "^2.1692.0",
@@ -46,7 +47,6 @@
     "react-redux": "^9.2.0",
     "react-timer-hook": "^3.0.8",
     "redux": "^5.0.1",
-    "redux-devtools-extension": "^2.13.9",
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.24.1"
